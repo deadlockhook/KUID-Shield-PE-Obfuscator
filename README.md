@@ -1,7 +1,7 @@
 # KUID Shield – PE Obfuscator
 
 KUID Shield is a custom obfuscator that provides advanced protection for Windows PE files.  
-It encrypts executable sections, enforces strict page access with `PAGE_NOACCESS`, and decrypts only through **KiUserExceptionDispatcher** — making reverse engineering and dumping nearly impossible.  
+It encrypts executable sections, enforces strict page access with `PAGE_NOACCESS`, and decrypts only through **KiUserExceptionDispatcher**, pages are also instantly rencrypted once execution is finished — making reverse engineering and dumping nearly impossible.  
 
 The system corrupts headers, resolves and destroys TLS/SEH, performs continuous self-integrity checks, and hides the real entry point behind obfuscated control flow. Invalid memory access attempts permanently corrupt the decryptor, breaking analysis attempts.  
 
@@ -12,7 +12,7 @@ The final result is a **stub executable** (`stub.exe`) containing only encrypted
 ## 🔒 Features
 
 - **Section Encryption & Protection**  
-  Executable sections encrypted and marked `PAGE_NOACCESS`, decrypted only via KiUserExceptionDispatcher.  
+  Executable sections encrypted and marked `PAGE_NOACCESS`, decrypted only via KiUserExceptionDispatcher and then re-encrypted after execution.  
 
 - **Pre-mapping & Header Corruption**  
   Relocations fixed at a fixed base, headers deliberately corrupted, TLS destroyed, SEH rebuilt, function entries re-registered.  
