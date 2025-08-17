@@ -27,8 +27,10 @@ The final result is a **stub executable** (`stub.exe`) containing only encrypted
   Memory access is validated; invalid access attempts irreversibly corrupt the decryptor.  
 
 - **Final Stub Generation**  
-  Produces a `stub.exe` with only encrypted pages. No recoverable plaintext sections remain.  
-
+  Produces a `stub.exe` with only encrypted pages. No recoverable plaintext sections remain.
+  
+- **Multi-threading support**  
+  Multithreading is fully supported — as shown by the “waiting” log in the console screenshot. Pages are safely decrypted and re-encrypted with controlled access across multiple threads, coordinated through a fast mutex.
 ---
 
 ## 🖼️ Screenshots
