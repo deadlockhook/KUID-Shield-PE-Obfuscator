@@ -1,4 +1,4 @@
-# KUID Shield – PE Obfuscator (Instant Rencryption Without Watchers)
+# KUID Shield – PE Obfuscator (Instant re-encryption without watchers)
 
 KUID Shield is a custom obfuscator that provides advanced protection for Windows PE files.  
 It encrypts executable sections, enforces strict page access with `PAGE_NOACCESS`, and decrypts only through **KiUserExceptionDispatcher**, pages are also instantly rencrypted once execution is finished — making reverse engineering and dumping nearly impossible.  
